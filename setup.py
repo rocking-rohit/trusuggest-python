@@ -1,7 +1,9 @@
 import setuptools
 
 setuptools.setup(
-    name="TruSuggest",
-    version="1.0.3",
-    author="Rocking Rohit"
+    name="trusuggest",
+    version="1.0.5",
+    author="Rocking Rohit",
+    url="https://github.com/rocking-rohit/trusuggest-python",
+    packages=setuptools.find_packages()
 )
