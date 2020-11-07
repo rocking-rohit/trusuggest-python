@@ -2,11 +2,11 @@ import requests
 import json
 
 
-def upload(accessToken, indexName, dataBinding):
+def upload(accessToken, indexName, uploadData):
     url = 'https://api.trusuggest.com/dev/index/upload'
     payload = {
         'indexName':indexName,
-        'uploadData':dataBinding.uploadData
+        'uploadData':uploadData
     }
     headers = {'content-type': 'application/json','Authorization': 'Bearer '+accessToken}
     r = requests.post(url, data=json.dumps(payload), headers=headers)
@@ -18,11 +18,11 @@ def upload(accessToken, indexName, dataBinding):
     else:
         return {'message':'Some Thing Went Wrong', 'success': 'false', 'status':response_status}
 
-def bulkUpload(accessToken, indexName, dataBinding):
+def bulkUpload(accessToken, indexName, uploadData):
     url = 'https://api.trusuggest.com/dev/index/bulk-upload'
     payload = {
         'indexName':indexName,
-        'uploadData':dataBinding.uploadData
+        'uploadData':uploadData
     }
     headers = {'content-type': 'application/json','Authorization': 'Bearer '+accessToken}
     r = requests.post(url, data=json.dumps(payload), headers=headers)
